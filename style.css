@@ -1,18 +1,19 @@
 body {
-    font-family: "Roboto";
+    font-family: "Roboto", Tahoma, sans-serif;
+    color: #1D2322;
 }
 
 main {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 66% 33%;
 }
 
 body {
-    background-color: #eee;
+    background-color: #DCD8C6;
 }
 
 h1,h2,h3,.result {
-    font-family: "Roboto Mono";
+    font-family: "Roboto Mono", 'Courier New', Courier, monospace;
 }
 
 .card-header {
@@ -27,12 +28,6 @@ h1,h2,h3,.result {
     padding: 1.2rem;
 }
 
-aside {
-    position: fixed;
-    right: .5rem;
-    width: 25%;
-}
-
 .prompt {
     font-size: 1.3rem;
 }
@@ -43,13 +38,13 @@ aside {
 }
 
 .result {
-    background-color: #FFFF0066;
+    background-color: #D88D1E66;
 }
 
 .result.fail {
-    background-color: #FF000066;
+    background-color: #F4433666;
 }
 
 .result.pass {
-    background-color: #00FF0066;
+    background-color: #5b9d5666;
 }

@@ -94,7 +94,7 @@ const getTypeMessage = (variable, type) => {
     let message = 'success';
     let actualType = typeof variable;
     if (variable === null) {
-        message = 'Did you make a change yet? If so, make sure you saved your file and refreshed this page!'
+        message = 'Did you make a change yet? If so, make sure that you saved your file and refreshed this page!'
     }
     else if (actualType !== type) {
         message = `I was expecting a ${type}, but you entered ${actualType === 'undefined' ? actualType : `a ${actualType}`}.`;
