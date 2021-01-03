@@ -1,0 +1,55 @@
+body {
+    font-family: "Roboto";
+}
+
+main {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+body {
+    background-color: #eee;
+}
+
+h1,h2,h3,.result {
+    font-family: "Roboto Mono";
+}
+
+.card-header {
+    margin-left: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    margin: 1rem;
+    padding: 1.2rem;
+}
+
+aside {
+    position: fixed;
+    right: .5rem;
+    width: 25%;
+}
+
+.prompt {
+    font-size: 1.3rem;
+}
+
+.result::before {
+    content: '>';
+    margin-right: .25rem;
+}
+
+.result {
+    background-color: #FFFF0066;
+}
+
+.result.fail {
+    background-color: #FF000066;
+}
+
+.result.pass {
+    background-color: #00FF0066;
+}

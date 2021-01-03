@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Data Type Practice</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
     <script src="validation.js" defer></script>
@@ -16,13 +18,13 @@
     </header>
     <main>
         <section>
-            <div class="description">
+            <div class="description card">
                 <h2>Description</h2>
                 <p>Welcome to the Data Types Practice Exercise! This exercise covers strings, numbers,
                 booleans, and bigints. There are many other data types in JavaScript that you'll encounter,
                 but these 4 are the most common when describing basic information.</p>
             </div>
-            <div class="instructions">
+            <div class="instructions card">
                 <h2>Instructions</h2>
                 <ol>
                     <li>Open up index.js in your editor</li>
@@ -30,96 +32,95 @@
                     <li>Refresh this page after saving changes to see your progress</li>
                 </ol>
             </div>
-            <div class="problem-container">
-                <h2>Questions</h2>
-                <div class="question">
+            <div class="problem-container card">
+                <h2 class="card-header">Questions</h2>
+                <div class="question card">
                     <p class="prompt">What is your name?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">Do Ichthyologists study fish, birds, or mammals?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">How many oceans are there?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">True or false, you are having fun wielding your knowledge of JavaScript data types!</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">What is the state fish of Hawaii? (The one that's fun to say!)</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">How many kilometers long is the Congo River?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">True or false, you have caught a fish.</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">The largest regular number that JavaScript can reliably handle is 9007199254740991. Make a BigInt that's larger!</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">True or false, JavaScript is rarely used in large tech companies.</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">True or false, you can use the BigInt with decimals.</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">How would you store the answer to (9007199254740992 + 1) as a BigInt?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">How many species of salmon are native to North America?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">What is the longest river in the world?</p>
                     <p class="result"></p>
                 </div>
-                <div class="question">
+                <div class="question card">
                     <p class="prompt">True or false, the previous requirements covered all possible JavaScript data types.</p>
                     <p class="result"></p>
                 </div>
             </div>
         </section>
-    </main>
-    <aside>
-        <h2>Workflow</h2>
-        <section>
-            <ol>
-                <li>Check your work as you make changes!</li>
-                <li>Save the javascript file</li>
-                <li>Refresh this page on your browser</li>
-                <li>If the changes meet requirements, keep working!</li>
-                <li>If there are errors, spend some time fixing them. If you're feeling stuck, take a look at the tips below.</li>
-            </ol>
-        </section>
-        <h2>Treading Water?</h2>
-        <section>
-            <h3>Tips</h3>
-            <ul>
-                <li>Check for errors in your browser's Developer Tools!</li>
+        <aside>
+            <section class="card">
+                <h2>Workflow</h2>
+                <ol>
+                    <li>Check your work as you make changes!</li>
+                    <li>Save the javascript file</li>
+                    <li>Refresh this page on your browser</li>
+                    <li>If the changes meet requirements, keep working!</li>
+                    <li>If there are errors, spend some time fixing them. If you're feeling stuck, take a look at the tips below.</li>
+                </ol>
+            </section>
+            <section class="card">
+                <h2>Treading Water?</h2>
                 <ul>
-                    <li>option + ⌘ + J</li>
-                    <li>Click "Console" tab</li>
-                    <li>If there are error messages, try to figure out what went wrong. Sometimes a quick google search can help you out!</li>
+                    <li>Check for errors in your browser's Developer Tools!</li>
+                    <ul>
+                        <li>option + ⌘ + J</li>
+                        <li>Click "Console" tab</li>
+                        <li>If there are error messages, try to figure out what went wrong. Sometimes a quick google search can help you out!</li>
+                    </ul>
                 </ul>
-            </ul>
-        </section>
-        <h2>Floundering?</h2>
-        <section>
-            <p>You can find a video walkthrough on youtube here. (LINK THIS)</p>
-            <p>You can find the solution on GitHub here. (LINK THIS)</p>
-        </section>
-    </aside>
+            </section>
+            <section class="card">
+                <h2>Floundering?</h2>
+                <p>You can find a video walkthrough on youtube here. (LINK THIS)</p>
+                <p>You can find the solution on GitHub here. (LINK THIS)</p>
+            </section>
+        </aside>
+    </main>
 </body>
 
 </html>
