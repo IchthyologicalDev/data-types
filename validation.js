@@ -10,6 +10,18 @@ Remove this comment after you've made changes to a new exercise.
 A recommended pattern is to create functions for each requirement.  
 */
 
+const UNCHANGED_MESSAGE = 'Did you make a change yet? If so, make sure that you saved your file and refreshed this page!'
+
+/**
+ * Clears all nested content from an element
+ * @param {HTMLElement} element - element to clear
+ */
+const clearElement = (element) => {
+    while(element.hasChildNodes()) {
+        element.removeChild(element.firstChild);
+    }
+}
+
 /**
  * Writes a result message to the DOM
  * @param {number} questionIndex - DOM index for this question
@@ -18,10 +30,17 @@ A recommended pattern is to create functions for each requirement.
  */
 const writeResult = (questionIndex, result, success) => {
     const resultElement = document.querySelectorAll('.problem-container > .question')[questionIndex].querySelector('.result');
+    clearElement(resultElement);
     const textNode = document.createTextNode(result);
     resultElement.appendChild(textNode);
 
-    resultElement.classList.toggle('pass', success);
+    if(success) {
+        resultElement.classList.add('pass');
+    }
+    else if (result !== UNCHANGED_MESSAGE) {
+        resultElement.classList.add('fail');
+    }
+
 }
 
 /**
@@ -147,7 +166,7 @@ const validateNumberOfOceans = () => {
 }
 
 const validateHavingFun = () => {
-    let message = getTypeMessage(numberOfOceans, 'number');
+    let message = getTypeMessage(havingFun, 'number');
     if (message === 'success') {
         message = havingFun ? "Glad that you're enjoying yourself!" : "Sorry that you're not having fun. Leave me a comment on Youtube if you have any suggestions.";
         return resultObject(true, message);
