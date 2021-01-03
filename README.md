@@ -1,2 +1,2 @@
 # data-types
-An bank of practice problems dealing with JavaScript data types
+Test out your knowledge of primtive data types in JavaScript! 
