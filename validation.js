@@ -92,11 +92,12 @@ example of triggering validation.
  */
 const getTypeMessage = (variable, type) => {
     let message = 'success';
+    let actualType = typeof variable;
     if (variable === null) {
         message = 'Did you make a change yet? If so, make sure you saved your file and refreshed this page!'
     }
-    else if (typeof variable !== type) {
-        message = `We were expecting a ${type}, but you entered a ${typeof variable}.`;
+    else if (actualType !== type) {
+        message = `I was expecting a ${type}, but you entered ${actualType === 'undefined' ? actualType : `a ${actualType}`}.`;
     }
     return message;
 }
@@ -113,7 +114,7 @@ const validateName = () => {
 const validateIchthyologistFocus = () => {
     let message = getTypeMessage(ichthyologistFocus, 'string');
     if (message === 'success') {
-        if(ichthyologistFocus == 'fish') {
+        if(ichthyologistFocus.toLowerCase() == 'fish') {
             message = 'Correct! Ichthyologists study fish';
         }
         else {
@@ -131,11 +132,11 @@ const validateNumberOfOceans = () => {
     if (message === 'success') {
         switch(numberOfOceans) {
             case 1:
-                return resultObject(true, '1 global ocean, huh? I\'ll accept that.');
+                return resultObject(true, ':) 1 global ocean? I\'ll accept that.');
             case 4:
-                return resultObject(true, 'Arctic, Atlantic, Indian, Pacific. Some people include the Southern Ocean now too.');
+                return resultObject(true, 'I learned that there were only 4 ocean basins as a kid, but the Southern Ocean is recognized as its own basin. This counts.');
             case 5:
-                return resultObject(true, 'Nice job! I learned that there were only 4 ocean basins as a kid, but the Southern Ocean is recognized as its own basin.');
+                return resultObject(true, 'Nice job!');
             default:
                 return resultObject(true, `I can't possibly know if the internet lied to you, or if the internet lied to me. I was expecting either 1, 4, or 5 as your answer, not ${numberOfOceans}. Since you put a number here, I'll take it.`)
         }
@@ -148,7 +149,7 @@ const validateNumberOfOceans = () => {
 const validateHavingFun = () => {
     let message = getTypeMessage(numberOfOceans, 'number');
     if (message === 'success') {
-        message = havingFun ? "Glad that you're enjoying yourself!" : "Sorry you're not having fun. Leave me a comment on Youtube if you have any suggestions.";
+        message = havingFun ? "Glad that you're enjoying yourself!" : "Sorry that you're not having fun. Leave me a comment on Youtube if you have any suggestions.";
         return resultObject(true, message);
     }
     else {
@@ -165,9 +166,9 @@ const validateHawaiianStateFish = () => {
             case 'humuhumu':
                 return resultObject(true, "Ae! The Humuhumunukunukuapua'a is Hawaii's state fish. Try saying that 10 times.");
             case 'reef triggerfish':
-                return resultObject(false, "You're technically right, but Reef Triggerfish isn't as fun to say as its other name.");
+                return resultObject(false, "You're technically right, but Reef Triggerfish isn't as fun to say as its other name. Try again.");
             default:
-                return resultObject(false, `Mahalo, but no, we were looking for humuhumunukunukuapua'a, not ${hawaiianStateFish}. At least you used a string!`)
+                return resultObject(false, `Mahalo, but no, I was looking for humuhumunukunukuapua'a, not ${hawaiianStateFish}. At least you used a string!`)
 
         }
     }
@@ -179,7 +180,7 @@ const validateHawaiianStateFish = () => {
 const validateCongoLength = () => {
     let message = getTypeMessage(congoLength, 'number');
     if (message === 'success') {
-        message = congoLength === 4370 ? `Correct! The Congo is ${congoLength}km long.` : `Hmmm. I thought it was 4370km long. If you say it's ${congoLength}, I'll take your word for it.`;
+        message = congoLength === 4370 ? `Correct! The Congo River is ${congoLength} km long.` : `Hmmm. I thought it was 4370 km long. If you say it's ${congoLength} km, I'll take your word for it.`;
         return resultObject(true, message);
     }
     else {
@@ -205,10 +206,10 @@ const validateBigInteger = () => {
     let message = getTypeMessage(bigInteger, 'bigint');
     if (message === 'success') {
         if (bigInteger > Number.MAX_SAFE_INTEGER) {
-            message = 'That truly is a big integer.'
+            message = `${bigInteger} truly is a big integer.`
         }
         else {
-            message = `You did make a big integer, but JavaScript supports integers up to ${Number.MAX_SAFE_INTEGER}. Regular numbers get weird after that.`;
+            return resultObject(false, `I want a BIG integer. Make sure it's larger than ${Number.MAX_SAFE_INTEGER}n.`);
         }
         return resultObject(true, message);
     }
@@ -221,9 +222,9 @@ const validateJavaScriptIsRarelyUsed = () => {
     let message = getTypeMessage(javaScriptIsRarelyUsed, 'boolean');
     if (message === 'success') {
         if(!javaScriptIsRarelyUsed) {
-            return resultObject(true, 'At the time of writing, JavaScript is by far the most used programming language. Do a search for "does X company use JavaScript?" and look at the results. I\'d bet the answer is yes.');
+            return resultObject(true, 'Correct! At the time of writing, JavaScript is by far the most used programming language. Do a search for "does X company use JavaScript?" and look at the results. I\'d bet the answer is yes.');
         }
-        return resultObject(false, 'JavaScript is heavily used. Even if you don\'t think it should be.');
+        return resultObject(false, 'Nope. JavaScript is heavily used. Even if you don\'t think it should be.');
     }
     else {
         return resultObject(false, message);
@@ -234,7 +235,7 @@ const validateBigIntWorksForDecimals = () => {
     let message = getTypeMessage(bigIntWorksForDecimals, 'boolean');
     if (message === 'success') {
         if(!bigIntWorksForDecimals) {
-            return resultObject(true, 'Correct. The bigint data type only works for integers. It\'s in the name!');
+            return resultObject(true, 'Correct! The bigint data type only works for integers. It\'s in the name.');
         }
 
         return resultObject(false, 'Nope. Integers refer to non-decimal numbers. That means bigint is only for big integers. If you don\'t believe me, try it out in your console!');
@@ -283,7 +284,7 @@ const validateLongestRiver = () => {
             return resultObject(true, 'Correct! Not only is da Nile the longest river in the world, but it\'s a mindset that developers frequently have to combat!');
         }
         else {
-            return resultObject(false, 'If you\'re in denial about this answer being wrong, then you should know what to guess next.');
+            return resultObject(false, `If you're in denial that it's not the ${longestRiver}, then you should know what to guess next.`);
         }
     }
     else {
