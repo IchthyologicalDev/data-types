@@ -96,9 +96,18 @@ const getTypeMessage = (variable, type) => {
         message = 'Did you make a change yet? If so, make sure you saved your file and refreshed this page!'
     }
     else if (typeof variable !== type) {
-        message = `We were expecting a string, but you entered a ${typeof variable}.`;
+        message = `We were expecting a ${type}, but you entered a ${typeof variable}.`;
     }
     return message;
+}
+
+const validateName = () => {
+    let message = getTypeMessage(name, 'string');
+    if(message === 'success') {
+        return resultObject(true, `If you say your name is ${name}, that's what I'll call you! Have fun practicing data types, ${name}!`);
+    } else {
+        return resultObject(false, message);
+    }
 }
 
 const validateIchthyologistFocus = () => {
@@ -117,6 +126,36 @@ const validateIchthyologistFocus = () => {
     }
 }
 
+const validateNumberOfOceans = () => {
+    let message = getTypeMessage(numberOfOceans, 'number');
+    if (message === 'success') {
+        switch(numberOfOceans) {
+            case 1:
+                return resultObject(true, '1 global ocean, huh? I\'ll accept that.');
+            case 4:
+                return resultObject(true, 'Arctic, Atlantic, Indian, Pacific. Some people include the Southern Ocean now too.');
+            case 5:
+                return resultObject(true, 'Nice job! I learned that there were only 4 ocean basins as a kid, but the Southern Ocean is recognized as its own basin.');
+            default:
+                return resultObject(true, `I can't possibly know if the internet lied to you, or if the internet lied to me. I was expecting either 1, 4, or 5 as your answer, not ${numberOfOceans}. Since you put a number here, I'll take it.`)
+        }
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateHavingFun = () => {
+    let message = getTypeMessage(numberOfOceans, 'number');
+    if (message === 'success') {
+        message = havingFun ? "Glad that you're enjoying yourself!" : "Sorry you're not having fun. Leave me a comment on Youtube if you have any suggestions.";
+        return resultObject(true, message);
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
 const validateHawaiianStateFish = () => {
     let message = getTypeMessage(hawaiianStateFish, 'string');
     if (message === 'success') {
@@ -128,7 +167,7 @@ const validateHawaiianStateFish = () => {
             case 'reef triggerfish':
                 return resultObject(false, "You're technically right, but Reef Triggerfish isn't as fun to say as its other name.");
             default:
-                return resultObject(false, `Mahalo, but no, we were looking for humuhumunukunukuapua'a, not ${hawaiianStateFish}.`)
+                return resultObject(false, `Mahalo, but no, we were looking for humuhumunukunukuapua'a, not ${hawaiianStateFish}. At least you used a string!`)
 
         }
     }
@@ -137,10 +176,150 @@ const validateHawaiianStateFish = () => {
     }
 }
 
+const validateCongoLength = () => {
+    let message = getTypeMessage(congoLength, 'number');
+    if (message === 'success') {
+        message = congoLength === 4370 ? `Correct! The Congo is ${congoLength}km long.` : `Hmmm. I thought it was 4370km long. If you say it's ${congoLength}, I'll take your word for it.`;
+        return resultObject(true, message);
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateHaveCaughtFish = () => {
+    let message = getTypeMessage(haveCaughtFish, 'boolean');
+    if (message === 'success') {
+        message = 'Nothing wrong with that.'
+        if(haveCaughtFish) {
+            message = 'Good for you!'
+        }
+        return resultObject(true, message);
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateBigInteger = () => {
+    let message = getTypeMessage(bigInteger, 'bigint');
+    if (message === 'success') {
+        if (bigInteger > Number.MAX_SAFE_INTEGER) {
+            message = 'That truly is a big integer.'
+        }
+        else {
+            message = `You did make a big integer, but JavaScript supports integers up to ${Number.MAX_SAFE_INTEGER}. Regular numbers get weird after that.`;
+        }
+        return resultObject(true, message);
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateJavaScriptIsRarelyUsed = () => {
+    let message = getTypeMessage(javaScriptIsRarelyUsed, 'boolean');
+    if (message === 'success') {
+        if(!javaScriptIsRarelyUsed) {
+            return resultObject(true, 'At the time of writing, JavaScript is by far the most used programming language. Do a search for "does X company use JavaScript?" and look at the results. I\'d bet the answer is yes.');
+        }
+        return resultObject(false, 'JavaScript is heavily used. Even if you don\'t think it should be.');
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateBigIntWorksForDecimals = () => {
+    let message = getTypeMessage(bigIntWorksForDecimals, 'boolean');
+    if (message === 'success') {
+        if(!bigIntWorksForDecimals) {
+            return resultObject(true, 'Correct. The bigint data type only works for integers. It\'s in the name!');
+        }
+
+        return resultObject(false, 'Nope. Integers refer to non-decimal numbers. That means bigint is only for big integers. If you don\'t believe me, try it out in your console!');
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateLargeNumber = () => {
+    let message = getTypeMessage(largeNumber, 'bigint');
+    if (message === 'success') {
+        if (largeNumber === 9007199254740993n) {
+            return resultObject(true, 'Correct! Did you know that 9007199254740993 can\'t be stored as a regular integer? If you try, it turns back into 9007199254740992.');
+        }
+        return resultObject(false, 'That\'s not how you write 9007199254740993n');
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateTotalNaSalmonSpecies = () => {
+    let message = getTypeMessage(totalNaSalmonSpecies, 'number');
+    if (message === 'success') {
+        if(totalNaSalmonSpecies === 6) {
+            return resultObject(true, 'Correct! There are 6. My favorite is the Sockeye/Red salmon.');
+        }
+        if(totalNaSalmonSpecies < 6) {
+            message = `There are more than ${totalNaSalmonSpecies} species native to North America. Did you include both coasts?`;
+        }
+        else {
+            message = `Reel it back a little. There aren't quite ${totalNaSalmonSpecies} salmon species that are native to North America.`;
+        }
+        return resultObject(false, message);
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateLongestRiver = () => {
+    let message = getTypeMessage(longestRiver, 'string');
+    if (message === 'success') {
+        if(longestRiver.toLowerCase() === 'nile') {
+            return resultObject(true, 'Correct! Not only is da Nile the longest river in the world, but it\'s a mindset that developers frequently have to combat!');
+        }
+        else {
+            return resultObject(false, 'If you\'re in denial about this answer being wrong, then you should know what to guess next.');
+        }
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
+const validateSeenAllTypes = () => {
+    let message = getTypeMessage(seenAllTypes, 'boolean');
+    if (message === 'success') {
+        if(!seenAllTypes) {
+            return resultObject(true, 'Correct! You\'re missing out on Symbol, undefined, null, and the endless flexibility of objects (which null happens to be)');
+        }
+        return resultObject(false, 'Even if you\'ve seen all types, they weren\'t covered in this exercise.');
+    }
+    else {
+        return resultObject(false, message);
+    }
+}
+
 //NOTE: The order of questions in this array must match the order of requirements on the DOM and in the index.js file.
 const questions = [
+    question(validateName),
     question(validateIchthyologistFocus),
-    question(validateHawaiianStateFish)
+    question(validateNumberOfOceans),
+    question(validateHavingFun),
+    question(validateHawaiianStateFish),
+    question(validateCongoLength),
+    question(validateHaveCaughtFish),
+    question(validateBigInteger),
+    question(validateJavaScriptIsRarelyUsed),
+    question(validateBigIntWorksForDecimals),
+    question(validateLargeNumber),
+    question(validateTotalNaSalmonSpecies),
+    question(validateLongestRiver),
+    question(validateSeenAllTypes),
 ]
 
 runValidation(questions);
