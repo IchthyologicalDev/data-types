@@ -134,12 +134,11 @@ const validateIchthyologistFocus = () => {
     let message = getTypeMessage(ichthyologistFocus, 'string');
     if (message === 'success') {
         if(ichthyologistFocus.toLowerCase() == 'fish') {
-            message = 'Correct! Ichthyologists study fish';
+            return resultObject(true,'Correct! Ichthyologists study fish');
         }
         else {
-            message = `Not quite, Ichthyologists don't study ${ichthyologistFocus}. Do a quick google search and try again!`;
+            return resultObject(false,`Not quite, Ichthyologists don't study ${ichthyologistFocus}. Do a quick google search and try again!`);
         }
-        return resultObject(true, message);
     }
     else {
         return resultObject(false, message);
