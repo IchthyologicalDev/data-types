@@ -1,6 +1,6 @@
 /*
 Welcome to the Data Types Practice Exercise! This exercise will let you practice
-with strings, numbers, booleans, and BigInt. There are many other data types in 
+with strings, numbers, booleans, and bigints. There are many other data types in 
 JavaScript, but these 4 are the most common when describing information. Read through
 the rest of this comment for instructions, or jump right down to the requirements!
 
