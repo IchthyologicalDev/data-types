@@ -32,7 +32,7 @@ let ichthyologistFocus = null
 
 //REQUIREMENT 2: What is your name?
 //TODO: On the following line, change null to your answer. Make sure that it's a string!
-let name = null;
+let developerName = null;
 
 //REQUIREMENT 3: How many oceans are there?
 //TODO: On the following line, change null to your answer. Make sure that it's a number!

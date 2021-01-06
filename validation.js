@@ -136,10 +136,10 @@ const validateIchthyologistFocus = () => {
     }
 }
 
-const validateName = () => {
-    let message = getTypeMessage(name, 'string');
+const validateDeveloperName = () => {
+    let message = getTypeMessage(developerName, 'string');
     if(message === 'success') {
-        return resultObject(true, `If you say your name is ${name}, that's what I'll call you! Have fun practicing data types, ${name}!`);
+        return resultObject(true, `If you say your name is ${developerName}, that's what I'll call you! Have fun practicing data types, ${developerName}!`);
     } else {
         return resultObject(false, message);
     }
@@ -326,7 +326,7 @@ const validateSeenAllTypes = () => {
 //NOTE: The order of questions in this array must match the order of requirements on the DOM and in the index.js file.
 const questions = [
     question(validateIchthyologistFocus),
-    question(validateName),
+    question(validateDeveloperName),
     question(validateNumberOfOceans),
     question(validateHavingFun),
     question(validateHawaiianStateFish),
