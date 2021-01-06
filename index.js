@@ -28,7 +28,7 @@ I hope that you get hooked on coding!
 
 //REQUIREMENT 1: Do Ichthyologists study fish, birds, or mammals?
 //TODO: On the following line, change null to your answer. Make sure that it's a string!
-let ichthyologistFocus = null
+let ichthyologistFocus = null;
 
 //REQUIREMENT 2: What is your name?
 //TODO: On the following line, change null to your answer. Make sure that it's a string!
