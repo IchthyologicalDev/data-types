@@ -121,15 +121,6 @@ const getTypeMessage = (variable, type) => {
     return message;
 }
 
-const validateName = () => {
-    let message = getTypeMessage(name, 'string');
-    if(message === 'success') {
-        return resultObject(true, `If you say your name is ${name}, that's what I'll call you! Have fun practicing data types, ${name}!`);
-    } else {
-        return resultObject(false, message);
-    }
-}
-
 const validateIchthyologistFocus = () => {
     let message = getTypeMessage(ichthyologistFocus, 'string');
     if (message === 'success') {
@@ -145,12 +136,21 @@ const validateIchthyologistFocus = () => {
     }
 }
 
+const validateDeveloperName = () => {
+    let message = getTypeMessage(developerName, 'string');
+    if(message === 'success') {
+        return resultObject(true, `If you say your name is ${developerName}, that's what I'll call you! Have fun practicing data types, ${developerName}!`);
+    } else {
+        return resultObject(false, message);
+    }
+}
+
 const validateNumberOfOceans = () => {
     let message = getTypeMessage(numberOfOceans, 'number');
     if (message === 'success') {
         switch(numberOfOceans) {
             case 1:
-                return resultObject(true, ':) 1 global ocean? I\'ll accept that.');
+                return resultObject(true, '1 global ocean? ><> ><> ><> I\'ll accept that.');
             case 4:
                 return resultObject(true, 'I learned that there were only 4 ocean basins as a kid, but the Southern Ocean is recognized as its own basin. This counts.');
             case 5:
@@ -165,7 +165,7 @@ const validateNumberOfOceans = () => {
 }
 
 const validateHavingFun = () => {
-    let message = getTypeMessage(havingFun, 'number');
+    let message = getTypeMessage(havingFun, 'boolean');
     if (message === 'success') {
         message = havingFun ? "Glad that you're enjoying yourself!" : "Sorry that you're not having fun. Leave me a comment on Youtube if you have any suggestions.";
         return resultObject(true, message);
@@ -325,8 +325,8 @@ const validateSeenAllTypes = () => {
 
 //NOTE: The order of questions in this array must match the order of requirements on the DOM and in the index.js file.
 const questions = [
-    question(validateName),
     question(validateIchthyologistFocus),
+    question(validateDeveloperName),
     question(validateNumberOfOceans),
     question(validateHavingFun),
     question(validateHawaiianStateFish),

@@ -26,13 +26,13 @@ video before continuing.
 I hope that you get hooked on coding!
 */
 
-//REQUIREMENT 1: What is your name?
+//REQUIREMENT 1: Do Ichthyologists study fish, birds, or mammals?
 //TODO: On the following line, change null to your answer. Make sure that it's a string!
-let name = null;
+let ichthyologistFocus = null;
 
-//REQUIREMENT 2: Do Ichthyologists study fish, birds, or mammals?
+//REQUIREMENT 2: What is your name?
 //TODO: On the following line, change null to your answer. Make sure that it's a string!
-let ichthyologistFocus = null
+let developerName = null;
 
 //REQUIREMENT 3: How many oceans are there?
 //TODO: On the following line, change null to your answer. Make sure that it's a number!
@@ -62,7 +62,7 @@ let bigInteger = null;
 //TODO: On the following line, change null to your answer. Make sure that it's a boolean!
 let javaScriptIsRarelyUsed = null;
 
-//REQUIREMENT 10: True or false, you can use the BigInt with decimals.
+//REQUIREMENT 10: True or false, you can use the BigInt data type with decimals.
 //TODO: On the following line, change null to your answer. Make sure that it's a boolean!
 let bigIntWorksForDecimals = null;
 
