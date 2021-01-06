@@ -13,8 +13,8 @@ Test out your knowledge of primitive data types in JavaScript!
 1. Follow the instructions on that page to get started
 
 ## Stuck?
-You can find a video walkthrough of this exercise here: 
-You can also find a solution by checking out the `solution` branch
+- You can find a video walkthrough of this exercise here: 
+- You can also find a solution by checking out the `solution` branch
 
 ## Contributors
 Shoutout to Derek Delaney for his help! You'd be staring at a non-styled exercise if it weren't for him.
