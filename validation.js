@@ -150,7 +150,7 @@ const validateNumberOfOceans = () => {
     if (message === 'success') {
         switch(numberOfOceans) {
             case 1:
-                return resultObject(true, ':) 1 global ocean? I\'ll accept that.');
+                return resultObject(true, '1 global ocean? ><> ><> ><> I\'ll accept that.');
             case 4:
                 return resultObject(true, 'I learned that there were only 4 ocean basins as a kid, but the Southern Ocean is recognized as its own basin. This counts.');
             case 5:
