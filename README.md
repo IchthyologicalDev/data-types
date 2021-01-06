@@ -7,7 +7,7 @@ Test out your knowledge of primitive data types in JavaScript!
 - JavaScript's Primitive Data Types
 
 ## Usage
-1. Clone down project (or download)
+1. Clone (or download) project
 1. Open project in editor of choice
 1. Open the index.html file in your browser
 1. Follow the instructions on that page to get started
