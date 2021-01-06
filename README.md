@@ -1,4 +1,4 @@
-# data-types
+# Data Types Practice Exercise
 Test out your knowledge of primitive data types in JavaScript! 
 
 ## Prerequisite Knowledge
