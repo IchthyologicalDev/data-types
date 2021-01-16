@@ -3,7 +3,7 @@ Test out your knowledge of primitive data types in JavaScript!
 
 ## Prerequisite Knowledge
 - Opening an HTML file in your browser
-- Editing text in a text editor
+- [Editing text in a text editor](https://youtu.be/vkWDQzl_x3s)
 - JavaScript's Primitive Data Types
 
 ## Usage
