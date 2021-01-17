@@ -20,8 +20,8 @@ instruction, helpful hints, best practices, or other content.
 
 IMPORTANT
 You should have the index.html file open in your browser as you work through this
-exercise. If you aren't sure what this means, you should watch the <INSERT LINK HERE> 
-video before continuing.
+exercise. If you aren't sure what this means, you should watch the How to Edit Code 
+video: https://youtu.be/vkWDQzl_x3s before continuing.
 
 I hope that you get hooked on coding!
 */
