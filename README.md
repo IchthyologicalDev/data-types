@@ -4,7 +4,7 @@ Test out your knowledge of primitive data types in JavaScript!
 ## Prerequisite Knowledge
 - Opening an HTML file in your browser
 - [Editing text in a text editor](https://youtu.be/vkWDQzl_x3s)
-- JavaScript's Primitive Data Types
+- [JavaScript's Primitive Data Types](https://youtu.be/RH_U3zl6S5I)
 
 ## Usage
 1. Clone (or download) project
